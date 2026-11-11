@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
-/* ВОТ ЭТА СТРОКА ДЕЛАЕТ ПРОКРУТКУ ПЛАВНОЙ */
 html {
     scroll-behavior: smooth;
 }
@@ -34,7 +33,6 @@ body {
     margin: 0 auto;
 }
 
-/* Кнопки */
 .btn {
     display: inline-block;
     padding: 12px 26px;
@@ -70,7 +68,6 @@ body {
     color: var(--white);
 }
 
-/* Шапка */
 header {
     background-color: var(--white);
     box-shadow: 0 2px 12px rgba(44, 62, 80, 0.06);
@@ -113,7 +110,6 @@ nav a:hover {
     color: var(--secondary);
 }
 
-/* Главный экран */
 .hero {
     background: linear-gradient(rgba(244, 247, 250, 0.92), rgba(244, 247, 250, 0.92)),
                 url('https://images.unsplash.com/photo-1517490232338-06b912a786b5?auto=format&fit=crop&q=80') center/cover no-repeat;
@@ -141,10 +137,8 @@ nav a:hover {
     justify-content: center;
 }
 
-/* Секции */
 .section {
     padding: 80px 0;
-    /* Добавляем отступ сверху, чтобы шапка не перекрывала заголовки при прокрутке */
     scroll-margin-top: 80px; 
 }
 
@@ -163,7 +157,6 @@ h2 {
     text-align: center;
 }
 
-/* Блок "Обо мне" */
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -203,7 +196,6 @@ h2 {
     margin: 0 auto;
 }
 
-/* Специализация */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -242,7 +234,6 @@ h2 {
     font-size: 0.95rem;
 }
 
-/* Форматы */
 .formats-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -279,7 +270,6 @@ h2 {
     color: var(--secondary);
 }
 
-/* Блог */
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -332,7 +322,6 @@ h2 {
     color: var(--primary);
 }
 
-/* СЕКЦИЯ КОНТАКТЫ С ФОРМОЙ */
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -421,7 +410,6 @@ h2 {
     font-size: 0.9rem;
 }
 
-/* Подвал */
 footer {
     background-color: var(--primary);
     color: var(--white);
@@ -439,7 +427,6 @@ footer p {
     font-size: 0.8rem;
 }
 
-/* Адаптивность (для телефонов) */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
