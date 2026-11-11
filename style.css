@@ -88,11 +88,26 @@ header {
 .logo {
     display: flex;
     align-items: center;
+    gap: 12px;
     text-decoration: none;
     color: var(--primary);
     font-weight: 600;
     font-size: 1.4rem;
     letter-spacing: 0.5px;
+}
+
+/* --- НАСТРОЙКИ ДЛЯ ОРИГИНАЛЬНОГО ЛОГОТИПА (ЗЕЛЕНЫЙ) --- */
+.logo img {
+    width: 50px !important;       /* Размер логотипа (чуть больше текста) */
+    height: 50px !important;
+    border-radius: 50% !important; /* Делает его идеально круглым */
+    object-fit: contain !important; /* Картинка вписывается, не обрезаясь */
+    transition: transform 0.3s ease;
+    /* Никаких фильтров, оставляем оригинальные цвета! */
+}
+
+.logo:hover img {
+    transform: scale(1.05);
 }
 
 nav ul {
@@ -161,7 +176,7 @@ h2 {
     text-align: center;
 }
 
-/* Блок "Обо мне" */
+/* Обо мне */
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -324,7 +339,7 @@ h2 {
     color: var(--primary);
 }
 
-/* БЛОК КОНТАКТОВ (КАРТОЧКИ) */
+/* Контакты */
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
