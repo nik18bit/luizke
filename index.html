@@ -10,7 +10,6 @@
 </head>
 <body>
 
-    <!-- ШАПКА -->
     <header>
         <div class="container header-container">
             <a href="index.html" class="logo">
@@ -25,23 +24,23 @@
                     <li><a href="#contacts">Контакты</a></li>
                 </ul>
             </nav>
-            <a href="https://wa.me/79196434365" class="btn btn-primary" target="_blank">Записаться</a>
+            
+            <!-- Кнопка теперь ведет прямо к контактам (#contacts) -->
+            <a href="#contacts" class="btn btn-primary">Записаться</a>
         </div>
     </header>
 
-    <!-- ГЛАВНЫЙ ЭКРАН -->
     <section class="hero">
         <div class="container hero-content">
             <h1>Психолог Луиза Абдуллина</h1>
             <p class="subtitle">Помогаю выстроить гармоничные отношения, справиться с тревогой и найти опору в себе. Консультации онлайн и в Казани.</p>
             <div class="hero-buttons">
-                <a href="https://t.me/+79196434365" class="btn btn-primary" target="_blank">Написать в Telegram</a>
-                <a href="#contacts" class="btn btn-secondary">Все контакты</a>
+                <a href="#contacts" class="btn btn-primary">Оставить заявку</a>
+                <a href="https://t.me/+79196434365" class="btn btn-secondary" target="_blank">Написать в Telegram</a>
             </div>
         </div>
     </section>
 
-    <!-- ОБО МНЕ -->
     <section id="about" class="section">
         <div class="container about-grid">
             <div class="about-text">
@@ -60,7 +59,6 @@
         </div>
     </section>
 
-    <!-- СПЕЦИАЛИЗАЦИЯ -->
     <section id="services" class="section bg-light">
         <div class="container">
             <h2 class="text-center">С чем я работаю</h2>
@@ -94,7 +92,6 @@
         </div>
     </section>
 
-    <!-- ФОРМАТЫ -->
     <section id="formats" class="section">
         <div class="container">
             <h2 class="text-center">Форматы консультаций</h2>
@@ -113,7 +110,6 @@
         </div>
     </section>
 
-    <!-- БЛОГ -->
     <section id="blog" class="section bg-light">
         <div class="container">
             <h2 class="text-center">Блог и статьи</h2>
@@ -121,8 +117,6 @@
                 Пишу о том, что волнует многих: отношения, тревога, границы и поиск себя. Читайте — и записывайтесь на консультацию, если хотите разобрать свою ситуацию лично.
             </p>
             <div class="blog-grid">
-
-                <!-- Статья 1 -->
                 <article class="blog-card">
                     <div class="blog-content">
                         <span style="font-size: 0.8rem; color: var(--secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Отношения</span>
@@ -132,7 +126,6 @@
                     </div>
                 </article>
 
-                <!-- Статья 2 -->
                 <article class="blog-card">
                     <div class="blog-content">
                         <span style="font-size: 0.8rem; color: var(--secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Тревожность</span>
@@ -142,7 +135,6 @@
                     </div>
                 </article>
 
-                <!-- Статья 3 -->
                 <article class="blog-card">
                     <div class="blog-content">
                         <span style="font-size: 0.8rem; color: var(--secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Семья</span>
@@ -151,41 +143,64 @@
                         <a href="article-3.html" class="read-more">Читать далее →</a>
                     </div>
                 </article>
-
             </div>
         </div>
     </section>
 
-    <!-- КОНТАКТЫ -->
+    <!-- Блок контактов, к которому будет прокручиваться страница -->
     <section id="contacts" class="section">
-        <div class="container text-center">
-            <h2>Связаться со мной</h2>
-            <p>Выберите удобный способ связи для записи на консультацию.</p>
+        <div class="container">
+            <h2 class="text-center">Записаться на консультацию</h2>
+            <p class="text-center" style="margin-bottom: 40px;">Оставьте заявку, и я свяжусь с вами в течение дня для уточнения деталей.</p>
             
-            <div class="contact-methods">
-                <a href="tel:+79196434365" class="contact-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>+7 (919) 643-43-65</span>
-                </a>
-                <a href="https://wa.me/79196434365" class="contact-item" target="_blank">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <span>WhatsApp</span>
-                </a>
-                <a href="https://t.me/+79196434365" class="contact-item" target="_blank">
-                    <i class="fa-brands fa-telegram"></i>
-                    <span>Telegram</span>
-                </a>
-                <a href="mailto:info@luizke.ru" class="contact-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>info@luizke.ru</span>
-                </a>
+            <div class="contact-wrapper">
+                <div class="contact-form-container">
+                    <form action="https://formsubmit.co/info@luizke.ru" method="POST">
+                        <input type="hidden" name="_subject" value="Новая заявка с сайта Luizke.ru!">
+                        <input type="hidden" name="_captcha" value="false">
+                        
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" name="name" placeholder="Как к вам обращаться?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон или Telegram</label>
+                            <input type="text" id="phone" name="phone" placeholder="+7 (999) 123-45-67 или @username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Коротко о запросе (необязательно)</label>
+                            <textarea id="message" name="message" rows="4" placeholder="С чем бы вы хотели поработать?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить заявку</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Или свяжитесь со мной напрямую:</h3>
+                    <div class="contact-methods-vertical">
+                        <a href="tel:+79196434365" class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+7 (919) 643-43-65</span>
+                        </a>
+                        <a href="https://wa.me/79196434365" class="contact-item" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="https://t.me/+79196434365" class="contact-item" target="_blank">
+                            <i class="fa-brands fa-telegram"></i>
+                            <span>Telegram</span>
+                        </a>
+                        <a href="mailto:info@luizke.ru" class="contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>info@luizke.ru</span>
+                        </a>
+                    </div>
+                    <p class="note" style="margin-top: 20px;">Кабинет в центре Казани — по предварительной записи.</p>
+                </div>
             </div>
-            
-            <p class="note">Кабинет в центре Казани — по предварительной записи.</p>
         </div>
     </section>
 
-    <!-- ПОДВАЛ -->
     <footer>
         <div class="container text-center">
             <p>&copy; 2024 Луиза Абдуллина. Психолог.</p>
