@@ -70,7 +70,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 15px 0;
+    padding: 10px 0;
 }
 
 .header-container {
@@ -82,29 +82,32 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     text-decoration: none;
     color: var(--primary);
     font-weight: 600;
     font-size: 1.2rem;
 }
 
-/* ЛОГОТИП */
+/* ИДЕАЛЬНЫЙ ЛОГОТИП: вписан в круг, белый фон скрыт */
 .logo img {
-    height: 40px;
-    width: auto;
-    transition: transform 0.3s ease;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* Делаем круглым */
+    object-fit: cover;  /* Заполняем круг без искажений */
+    background-color: #F4F7FA; /* Легкий фон в тон сайту */
+    padding: 5px; /* Отступ, чтобы дерево не прилипало к краям */
     
-    /* ВАРИАНТ 1: Темно-синий силуэт с прозрачным фоном (рекомендую) */
-    filter: brightness(0) saturate(100%) invert(15%) sepia(20%) saturate(1500%) hue-rotate(175deg) brightness(95%) contrast(90%);
+    /* Мягкий фильтр, который делает его сине-серым, не превращая в кашу */
+    filter: grayscale(100%) contrast(120%) opacity(0.8);
     
-    /* ВАРИАНТ 2: Если хотите вернуть оригинальный коричневый логотип, 
-       удалите две косые черты в начале и в конце этой строки: */
-    /* filter: none; */
+    transition: all 0.3s ease;
+    border: 1px solid #E2E8F0;
 }
 
 .logo:hover img {
     transform: scale(1.05);
+    filter: grayscale(100%) contrast(120%) opacity(1);
 }
 
 nav ul {
