@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
 :root {
-    /* Сине-серая палитра сайта */
     --primary: #2C3E50;
     --secondary: #5D7A99;
     --accent: #D6E1EC;
@@ -90,18 +89,22 @@ header {
     font-size: 1.2rem;
 }
 
-/* МОЩНЫЙ ФИЛЬТР ДЛЯ ЛОГОТИПА */
-/* Превращает коричневое дерево в строгий сине-серый (#5D7A99) */
+/* ЛОГОТИП */
 .logo img {
-    height: 45px;
+    height: 40px;
     width: auto;
-    /* Заливаем цветом кнопок (secondary) */
-    filter: brightness(0) saturate(100%) invert(48%) sepia(13%) saturate(1223%) hue-rotate(169deg) brightness(91%) contrast(86%);
     transition: transform 0.3s ease;
+    
+    /* ВАРИАНТ 1: Темно-синий силуэт с прозрачным фоном (рекомендую) */
+    filter: brightness(0) saturate(100%) invert(15%) sepia(20%) saturate(1500%) hue-rotate(175deg) brightness(95%) contrast(90%);
+    
+    /* ВАРИАНТ 2: Если хотите вернуть оригинальный коричневый логотип, 
+       удалите две косые черты в начале и в конце этой строки: */
+    /* filter: none; */
 }
 
 .logo:hover img {
-    transform: scale(1.05); /* Легкое увеличение при наведении */
+    transform: scale(1.05);
 }
 
 nav ul {
