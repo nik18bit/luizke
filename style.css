@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
 :root {
-    /* Новая сине-серая палитра */
-    --primary: #2C3E50;      /* Тёмный сине-серый (заголовки, шапка) */
-    --secondary: #5D7A99;    /* Средний сине-серый (кнопки, акценты) */
-    --accent: #D6E1EC;       /* Светлый голубовато-серый (фоны блоков) */
-    --bg-light: #F4F7FA;     /* Очень светлый серо-голубой фон */
-    --text-dark: #2C3E50;    /* Основной текст */
-    --text-light: #6B7B8C;   /* Второстепенный текст */
+    /* Сине-серая палитра сайта */
+    --primary: #2C3E50;
+    --secondary: #5D7A99;
+    --accent: #D6E1EC;
+    --bg-light: #F4F7FA;
+    --text-dark: #2C3E50;
+    --text-light: #6B7B8C;
     --white: #ffffff;
 }
 
@@ -90,10 +90,16 @@ header {
     font-size: 1.2rem;
 }
 
+/* ЛОГОТИП: перекрашиваем коричневое дерево в сине-серый */
 .logo img {
     height: 45px;
-    /* Если логотип цветной — можно слегка приглушить, чтобы вписался в синюю гамму */
-    /* filter: grayscale(30%); */
+    /* Переводим в оттенки серого и подкрашиваем синим */
+    filter: grayscale(100%) sepia(20%) hue-rotate(175deg) saturate(180%) brightness(90%);
+    transition: filter 0.3s ease;
+}
+
+.logo:hover img {
+    filter: grayscale(100%) sepia(20%) hue-rotate(175deg) saturate(220%) brightness(85%);
 }
 
 nav ul {
