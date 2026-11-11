@@ -70,7 +70,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 .header-container {
@@ -79,35 +79,20 @@ header {
     align-items: center;
 }
 
+/* Стиль названия сайта (работает как логотип) */
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
     text-decoration: none;
     color: var(--primary);
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
 }
 
-/* ИДЕАЛЬНЫЙ ЛОГОТИП: вписан в круг, белый фон скрыт */
+/* ЖЕЛЕЗНАЯ ЗАЩИТА: если на страницах статей остался тег <img>, мы его жестко скроем */
 .logo img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%; /* Делаем круглым */
-    object-fit: cover;  /* Заполняем круг без искажений */
-    background-color: #F4F7FA; /* Легкий фон в тон сайту */
-    padding: 5px; /* Отступ, чтобы дерево не прилипало к краям */
-    
-    /* Мягкий фильтр, который делает его сине-серым, не превращая в кашу */
-    filter: grayscale(100%) contrast(120%) opacity(0.8);
-    
-    transition: all 0.3s ease;
-    border: 1px solid #E2E8F0;
-}
-
-.logo:hover img {
-    transform: scale(1.05);
-    filter: grayscale(100%) contrast(120%) opacity(1);
+    display: none !important;
 }
 
 nav ul {
