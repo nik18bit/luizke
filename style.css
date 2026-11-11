@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
+/* ВОТ ЭТА СТРОКА ДЕЛАЕТ ПРОКРУТКУ ПЛАВНОЙ */
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --primary: #2C3E50;
     --secondary: #5D7A99;
@@ -39,6 +44,8 @@ body {
     font-size: 0.95rem;
     transition: all 0.3s ease;
     cursor: pointer;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .btn-primary {
@@ -89,11 +96,6 @@ header {
     letter-spacing: 0.5px;
 }
 
-/* Защита на случай, если в старых файлах остался тег <img> */
-.logo img {
-    display: none !important;
-}
-
 nav ul {
     display: flex;
     list-style: none;
@@ -142,6 +144,8 @@ nav a:hover {
 /* Секции */
 .section {
     padding: 80px 0;
+    /* Добавляем отступ сверху, чтобы шапка не перекрывала заголовки при прокрутке */
+    scroll-margin-top: 80px; 
 }
 
 .bg-light {
@@ -188,16 +192,15 @@ h2 {
     margin-right: 10px;
 }
 
-/* Стили для вашей фотографии (УМЕНЬШЕНА НА 20%) */
 .about-image img {
     width: 100%;
-    max-width: 420px; /* Ограничиваем ширину фото */
-    max-height: 520px; /* Ограничиваем высоту фото, чтобы оно не вылезало за экран */
-    object-fit: cover; /* Фото красиво кадрируется, не искажаясь */
+    max-width: 400px;
+    max-height: 500px;
+    object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 12px 30px rgba(44, 62, 80, 0.15);
     display: block;
-    margin: 0 auto; /* Центрируем фото внутри колонки */
+    margin: 0 auto;
 }
 
 /* Специализация */
@@ -329,26 +332,76 @@ h2 {
     color: var(--primary);
 }
 
-/* Контакты */
-.contact-methods {
+/* СЕКЦИЯ КОНТАКТЫ С ФОРМОЙ */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(44, 62, 80, 0.08);
+}
+
+.contact-form-container form {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: 40px 0;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: var(--primary);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary);
+}
+
+.contact-info h3 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.contact-methods-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .contact-item {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     background: var(--bg-light);
-    padding: 22px 30px;
-    border-radius: 15px;
+    padding: 15px 20px;
+    border-radius: 12px;
     text-decoration: none;
     color: var(--primary);
-    min-width: 150px;
+    font-weight: 500;
     transition: 0.3s;
     border: 1px solid #E2E8F0;
 }
@@ -359,7 +412,7 @@ h2 {
 }
 
 .contact-item i {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--secondary);
 }
 
@@ -404,14 +457,14 @@ footer p {
         flex-direction: column; 
         align-items: center; 
     }
-    .about-grid, .formats-grid { 
+    .about-grid, .formats-grid, .contact-wrapper { 
         grid-template-columns: 1fr; 
     }
     .about-image { 
         order: -1; 
     }
     .about-image img {
-        max-height: 380px; /* На телефоне фото будет еще меньше, чтобы не занимать весь экран */
+        max-height: 350px;
     }
     h2 { 
         font-size: 1.8rem; 
