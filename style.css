@@ -96,14 +96,16 @@ header {
     letter-spacing: 0.5px;
 }
 
-/* --- НАСТРОЙКИ ДЛЯ ОРИГИНАЛЬНОГО ЛОГОТИПА (ЗЕЛЕНЫЙ) --- */
+/* --- НАСТРОЙКИ ДЛЯ ЛОГОТИПА --- */
 .logo img {
-    width: 50px !important;       /* Размер логотипа (чуть больше текста) */
-    height: 50px !important;
-    border-radius: 50% !important; /* Делает его идеально круглым */
-    object-fit: contain !important; /* Картинка вписывается, не обрезаясь */
+    width: 50px;              /* Размер логотипа */
+    height: 50px;
+    border-radius: 50%;       /* Делаем круглым */
+    object-fit: cover;        /* Заполняет круг */
+    background-color: #f0f4f8;/* Легкий фон, чтобы круг не был пустым */
+    border: 1px solid #E2E8F0;
+    padding: 2px;
     transition: transform 0.3s ease;
-    /* Никаких фильтров, оставляем оригинальные цвета! */
 }
 
 .logo:hover img {
