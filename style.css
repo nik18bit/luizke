@@ -76,7 +76,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 15px 0;
+    padding: 10px 0; /* Чуть уменьшили отступ, чтобы шапка была аккуратнее */
 }
 
 .header-container {
@@ -96,14 +96,14 @@ header {
     letter-spacing: 0.5px;
 }
 
-/* --- МАГИЯ ДЛЯ ЛОГОТИПА --- */
+/* --- ЖЕСТКИЕ НАСТРОЙКИ ДЛЯ ЛОГОТИПА --- */
 .logo img {
-    height: 45px;
-    width: auto;
-    /* 1. Убираем белый фон */
-    mix-blend-mode: multiply; 
-    /* 2. Перекрашиваем зелень в сине-серый, оставляя черный черным */
-    filter: grayscale(100%) sepia(100%) hue-rotate(175deg) saturate(300%) brightness(85%);
+    width: 45px !important;     /* Принудительно задаем ширину */
+    height: 45px !important;    /* Принудительно задаем высоту */
+    object-fit: contain;        /* Картинка не будет искажаться */
+    mix-blend-mode: multiply;   /* Убирает белый фон картинки */
+    /* Делаем картинку темно-синей, как заголовки */
+    filter: grayscale(1) sepia(1) hue-rotate(170deg) saturate(500%) brightness(0.5);
     transition: transform 0.3s ease;
 }
 
@@ -285,12 +285,6 @@ h2 {
 .format-card p {
     color: var(--text-light);
     margin-bottom: 20px;
-}
-
-.price {
-    display: inline-block;
-    font-weight: 600;
-    color: var(--secondary);
 }
 
 /* Блог */
