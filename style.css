@@ -79,7 +79,6 @@ header {
     align-items: center;
 }
 
-/* Стиль названия сайта (работает как логотип) */
 .logo {
     display: flex;
     align-items: center;
@@ -90,7 +89,7 @@ header {
     letter-spacing: 0.5px;
 }
 
-/* ЖЕЛЕЗНАЯ ЗАЩИТА: если на страницах статей остался тег <img>, мы его жестко скроем */
+/* Защита на случай, если в старых файлах остался тег <img> */
 .logo img {
     display: none !important;
 }
@@ -160,7 +159,7 @@ h2 {
     text-align: center;
 }
 
-/* Обо мне */
+/* Блок "Обо мне" и ФОТО */
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -189,10 +188,13 @@ h2 {
     margin-right: 10px;
 }
 
+/* Стили для вашей фотографии */
 .about-image img {
     width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 12px 30px rgba(44, 62, 80, 0.15);
+    max-height: 600px; /* Чтобы фото не было слишком длинным */
+    object-fit: cover; /* Чтобы фото красиво заполняло пространство */
+    border-radius: 20px; /* Закругленные углы */
+    box-shadow: 0 12px 30px rgba(44, 62, 80, 0.15); /* Легкая тень */
 }
 
 /* Специализация */
@@ -381,7 +383,7 @@ footer p {
     font-size: 0.8rem;
 }
 
-/* Адаптивность */
+/* Адаптивность (для телефонов) */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
@@ -392,9 +394,23 @@ footer p {
         justify-content: center;
         gap: 15px;
     }
-    .hero h1 { font-size: 2rem; }
-    .hero-buttons { flex-direction: column; align-items: center; }
-    .about-grid, .formats-grid { grid-template-columns: 1fr; }
-    .about-image { order: -1; }
-    h2 { font-size: 1.8rem; }
+    .hero h1 { 
+        font-size: 2rem; 
+    }
+    .hero-buttons { 
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .about-grid, .formats-grid { 
+        grid-template-columns: 1fr; 
+    }
+    .about-image { 
+        order: -1; /* На телефоне фото будет сверху, над текстом */
+    }
+    .about-image img {
+        max-height: 400px; /* Ограничиваем высоту фото на телефоне */
+    }
+    h2 { 
+        font-size: 1.8rem; 
+    }
 }
