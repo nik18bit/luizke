@@ -159,7 +159,7 @@ h2 {
     text-align: center;
 }
 
-/* Блок "Обо мне" и ФОТО */
+/* Блок "Обо мне" */
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -188,13 +188,16 @@ h2 {
     margin-right: 10px;
 }
 
-/* Стили для вашей фотографии */
+/* Стили для вашей фотографии (УМЕНЬШЕНА НА 20%) */
 .about-image img {
     width: 100%;
-    max-height: 600px; /* Чтобы фото не было слишком длинным */
-    object-fit: cover; /* Чтобы фото красиво заполняло пространство */
-    border-radius: 20px; /* Закругленные углы */
-    box-shadow: 0 12px 30px rgba(44, 62, 80, 0.15); /* Легкая тень */
+    max-width: 420px; /* Ограничиваем ширину фото */
+    max-height: 520px; /* Ограничиваем высоту фото, чтобы оно не вылезало за экран */
+    object-fit: cover; /* Фото красиво кадрируется, не искажаясь */
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(44, 62, 80, 0.15);
+    display: block;
+    margin: 0 auto; /* Центрируем фото внутри колонки */
 }
 
 /* Специализация */
@@ -405,10 +408,10 @@ footer p {
         grid-template-columns: 1fr; 
     }
     .about-image { 
-        order: -1; /* На телефоне фото будет сверху, над текстом */
+        order: -1; 
     }
     .about-image img {
-        max-height: 400px; /* Ограничиваем высоту фото на телефоне */
+        max-height: 380px; /* На телефоне фото будет еще меньше, чтобы не занимать весь экран */
     }
     h2 { 
         font-size: 1.8rem; 
