@@ -34,7 +34,7 @@
             <h1>Психолог Луиза Абдуллина</h1>
             <p class="subtitle">Помогаю выстроить гармоничные отношения, справиться с тревогой и найти опору в себе. Консультации онлайн и в Казани.</p>
             <div class="hero-buttons">
-                <a href="#contacts" class="btn btn-primary">Оставить заявку</a>
+                <a href="#contacts" class="btn btn-primary">Связаться со мной</a>
                 <a href="https://t.me/+79196434365" class="btn btn-secondary" target="_blank">Написать в Telegram</a>
             </div>
         </div>
@@ -147,57 +147,34 @@
     </section>
 
     <section id="contacts" class="section">
-        <div class="container">
-            <h2 class="text-center">Записаться на консультацию</h2>
-            <p class="text-center" style="margin-bottom: 40px;">Оставьте заявку, и я свяжусь с вами в течение дня для уточнения деталей.</p>
+        <div class="container text-center">
+            <h2>Связаться со мной</h2>
+            <p style="margin-bottom: 40px; color: var(--text-light);">Выберите удобный для вас способ связи. Я на связи ежедневно с 10:00 до 20:00.</p>
             
-            <div class="contact-wrapper">
-                <div class="contact-form-container">
-                    <!-- ЗДЕСЬ ИЗМЕНЕНА ПОЧТА ДЛЯ ОТПРАВКИ ЗАЯВОК -->
-                    <form action="https://formsubmit.co/luizke@mail.ru" method="POST">
-                        <input type="hidden" name="_subject" value="Новая заявка с сайта Luizke.ru!">
-                        <input type="hidden" name="_captcha" value="false">
-                        
-                        <div class="form-group">
-                            <label for="name">Ваше имя</label>
-                            <input type="text" id="name" name="name" placeholder="Как к вам обращаться?" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Телефон или Telegram</label>
-                            <input type="text" id="phone" name="phone" placeholder="+7 (999) 123-45-67 или @username" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Коротко о запросе (необязательно)</label>
-                            <textarea id="message" name="message" rows="4" placeholder="С чем бы вы хотели поработать?"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить заявку</button>
-                    </form>
-                </div>
-
-                <div class="contact-info">
-                    <h3>Или свяжитесь со мной напрямую:</h3>
-                    <div class="contact-methods-vertical">
-                        <a href="tel:+79196434365" class="contact-item">
-                            <i class="fa-solid fa-phone"></i>
-                            <span>+7 (919) 643-43-65</span>
-                        </a>
-                        <a href="https://wa.me/79196434365" class="contact-item" target="_blank">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <span>WhatsApp</span>
-                        </a>
-                        <a href="https://t.me/+79196434365" class="contact-item" target="_blank">
-                            <i class="fa-brands fa-telegram"></i>
-                            <span>Telegram</span>
-                        </a>
-                        <!-- ЗДЕСЬ ИЗМЕНЕНА ПОЧТА ДЛЯ КНОПКИ -->
-                        <a href="mailto:luizke@mail.ru" class="contact-item">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span>luizke@mail.ru</span>
-                        </a>
-                    </div>
-                    <p class="note" style="margin-top: 20px;">Кабинет в центре Казани — по предварительной записи.</p>
-                </div>
+            <div class="contact-grid">
+                <a href="tel:+79196434365" class="contact-card">
+                    <i class="fa-solid fa-phone"></i>
+                    <h3>Позвонить</h3>
+                    <span>+7 (919) 643-43-65</span>
+                </a>
+                <a href="https://wa.me/79196434365" class="contact-card" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <h3>WhatsApp</h3>
+                    <span>Написать в мессенджер</span>
+                </a>
+                <a href="https://t.me/+79196434365" class="contact-card" target="_blank">
+                    <i class="fa-brands fa-telegram"></i>
+                    <h3>Telegram</h3>
+                    <span>Написать в мессенджер</span>
+                </a>
+                <a href="mailto:luizke@mail.ru" class="contact-card">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h3>Почта</h3>
+                    <span>luizke@mail.ru</span>
+                </a>
             </div>
+            
+            <p class="note" style="margin-top: 40px;">Кабинет в центре Казани — по предварительной записи.</p>
         </div>
     </section>
 
