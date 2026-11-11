@@ -90,16 +90,18 @@ header {
     font-size: 1.2rem;
 }
 
-/* ЛОГОТИП: перекрашиваем коричневое дерево в сине-серый */
+/* МОЩНЫЙ ФИЛЬТР ДЛЯ ЛОГОТИПА */
+/* Превращает коричневое дерево в строгий сине-серый (#5D7A99) */
 .logo img {
     height: 45px;
-    /* Переводим в оттенки серого и подкрашиваем синим */
-    filter: grayscale(100%) sepia(20%) hue-rotate(175deg) saturate(180%) brightness(90%);
-    transition: filter 0.3s ease;
+    width: auto;
+    /* Заливаем цветом кнопок (secondary) */
+    filter: brightness(0) saturate(100%) invert(48%) sepia(13%) saturate(1223%) hue-rotate(169deg) brightness(91%) contrast(86%);
+    transition: transform 0.3s ease;
 }
 
 .logo:hover img {
-    filter: grayscale(100%) sepia(20%) hue-rotate(175deg) saturate(220%) brightness(85%);
+    transform: scale(1.05); /* Легкое увеличение при наведении */
 }
 
 nav ul {
