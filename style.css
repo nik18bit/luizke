@@ -76,7 +76,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 20px 0;
+    padding: 15px 0;
 }
 
 .header-container {
@@ -88,11 +88,27 @@ header {
 .logo {
     display: flex;
     align-items: center;
+    gap: 12px;
     text-decoration: none;
     color: var(--primary);
     font-weight: 600;
     font-size: 1.4rem;
     letter-spacing: 0.5px;
+}
+
+/* --- МАГИЯ ДЛЯ ЛОГОТИПА --- */
+.logo img {
+    height: 45px;
+    width: auto;
+    /* 1. Убираем белый фон */
+    mix-blend-mode: multiply; 
+    /* 2. Перекрашиваем зелень в сине-серый, оставляя черный черным */
+    filter: grayscale(100%) sepia(100%) hue-rotate(175deg) saturate(300%) brightness(85%);
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.05);
 }
 
 nav ul {
@@ -330,7 +346,7 @@ h2 {
     color: var(--primary);
 }
 
-/* --- НОВЫЙ БЛОК КОНТАКТОВ (КАРТОЧКИ) --- */
+/* БЛОК КОНТАКТОВ (КАРТОЧКИ) */
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -401,7 +417,7 @@ footer p {
     font-size: 0.8rem;
 }
 
-/* Адаптивность (для телефонов) */
+/* Адаптивность */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
@@ -432,12 +448,12 @@ footer p {
         font-size: 1.8rem; 
     }
     .contact-grid {
-        grid-template-columns: 1fr 1fr; /* На телефоне карточки будут в 2 колонки */
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 @media (max-width: 480px) {
     .contact-grid {
-        grid-template-columns: 1fr; /* На очень маленьких экранах — в 1 колонку */
+        grid-template-columns: 1fr;
     }
 }
