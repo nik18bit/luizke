@@ -171,7 +171,6 @@ nav a:hover {
 
 /* Главный экран */
 .hero {
-    /* УБРАНА КАРТИНКА, ОСТАВЛЕН ЧИСТЫЙ ГРАДИЕНТ В ЦВЕТАХ САЙТА */
     background: linear-gradient(135deg, #F4F7FA 0%, #E6EDF5 100%);
     padding: 130px 0;
     text-align: center;
