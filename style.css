@@ -27,7 +27,6 @@ body {
     background-color: var(--white);
 }
 
-/* Защита от растягивания SVG */
 svg {
     display: inline-block;
     vertical-align: middle;
@@ -133,7 +132,6 @@ header {
     transform: scale(1.15);
 }
 
-/* Жестко фиксируем размер иконок в шапке */
 .header-socials svg {
     width: 22px;
     height: 22px;
@@ -173,8 +171,8 @@ nav a:hover {
 
 /* Главный экран */
 .hero {
-    background: linear-gradient(rgba(244, 247, 250, 0.92), rgba(244, 247, 250, 0.92)),
-                url('https://images.unsplash.com/photo-1517490232338-06b912a786b5?auto=format&fit=crop&q=80') center/cover no-repeat;
+    /* УБРАНА КАРТИНКА, ОСТАВЛЕН ЧИСТЫЙ ГРАДИЕНТ В ЦВЕТАХ САЙТА */
+    background: linear-gradient(135deg, #F4F7FA 0%, #E6EDF5 100%);
     padding: 130px 0;
     text-align: center;
 }
@@ -361,216 +359,4 @@ h2 {
     flex-grow: 1;
 }
 
-.blog-tag {
-    font-size: 0.8rem;
-    color: var(--secondary);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.blog-content h3 {
-    color: var(--primary);
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-    line-height: 1.4;
-}
-
-.blog-content p {
-    color: var(--text-light);
-    font-size: 0.92rem;
-    margin-bottom: 20px;
-    flex-grow: 1;
-}
-
-.read-more {
-    text-decoration: none;
-    color: var(--secondary);
-    font-weight: 600;
-    font-size: 0.9rem;
-    align-self: flex-start;
-}
-
-.read-more:hover {
-    color: var(--primary);
-}
-
-/* Контакты */
-.contacts-intro {
-    margin-bottom: 40px;
-    color: var(--text-light);
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.contact-card {
-    background: var(--bg-light);
-    padding: 30px 20px;
-    border-radius: 15px;
-    text-decoration: none;
-    color: var(--primary);
-    border: 1px solid #E2E8F0;
-    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-}
-
-.contact-card:hover {
-    background: var(--white);
-    border-color: var(--secondary);
-    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.1);
-    transform: translateY(-5px);
-}
-
-.contact-card h3 {
-    font-size: 1.1rem;
-    margin: 0;
-    color: var(--primary);
-}
-
-.contact-card span {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    font-weight: 500;
-}
-
-.note {
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-.contacts-note {
-    margin-top: 40px;
-}
-
-/* Подвал */
-footer {
-    background-color: var(--primary);
-    color: var(--white);
-    padding: 30px 0;
-}
-
-footer p {
-    opacity: 0.85;
-    font-size: 0.9rem;
-}
-
-.footer-links a {
-    color: var(--accent);
-    text-decoration: none;
-    font-size: 0.8rem;
-}
-
-/* Плавающие кнопки связи */
-.floating-contacts {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 9999;
-}
-
-.float-btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.float-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-}
-
-/* Жестко фиксируем размер плавающих иконок */
-.float-btn svg {
-    width: 26px;
-    height: 26px;
-    display: block;
-}
-
-.float-btn.whatsapp {
-    background-color: #25D366;
-}
-
-.float-btn.telegram {
-    background-color: #0088cc;
-}
-
-.float-btn.phone {
-    background-color: #6c5ce7;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .header-left {
-        flex-direction: column;
-        gap: 10px;
-    }
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-    .hero h1 { 
-        font-size: 2rem; 
-    }
-    .hero-buttons { 
-        flex-direction: column; 
-        align-items: center; 
-    }
-    .about-grid, .formats-grid { 
-        grid-template-columns: 1fr; 
-    }
-    .about-image { 
-        order: -1; 
-    }
-    .about-image img {
-        max-height: 350px;
-    }
-    h2 { 
-        font-size: 1.8rem; 
-    }
-    .contact-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-    /* Уменьшаем размер кнопок на мобильных */
-    .floating-contacts {
-        right: 15px;
-        bottom: 15px;
-        gap: 10px;
-    }
-    .float-btn {
-        width: 45px;
-        height: 45px;
-    }
-    .float-btn svg {
-        width: 22px;
-        height: 22px;
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-}
+.blog
