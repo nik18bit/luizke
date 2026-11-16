@@ -172,7 +172,8 @@ nav a:hover {
 /* Главный экран */
 .hero {
     background: linear-gradient(135deg, #F4F7FA 0%, #E6EDF5 100%);
-    padding: 130px 0;
+    /* УМЕНЬШИЛИ ОТСТУП ВДВОЕ: было 130px, стало 65px */
+    padding: 65px 0;
     text-align: center;
 }
 
