@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+@charset "UTF-8";
+
+/* Шрифты подключаются через <link> в HTML для скорости */
 
 html {
     scroll-behavior: smooth;
@@ -25,6 +27,9 @@ body {
     color: var(--text-dark);
     line-height: 1.7;
     background-color: var(--white);
+    overflow-x: hidden; /* защита от горизонтального скролла */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 svg {
@@ -32,6 +37,12 @@ svg {
     vertical-align: middle;
     max-width: 100%;
     max-height: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .container {
@@ -76,7 +87,6 @@ svg {
     color: var(--white);
 }
 
-/* Увеличенная кнопка на главном экране */
 .hero-btn-large {
     padding: 16px 40px;
     font-size: 1.1rem;
@@ -103,16 +113,16 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-/* Левая часть шапки: иконки + лого */
 .header-left {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-/* Иконки соцсетей и связи */
 .header-socials {
     display: flex;
     align-items: center;
@@ -138,7 +148,6 @@ header {
     display: block;
 }
 
-/* Текстовый логотип */
 .logo {
     text-decoration: none;
     color: var(--primary);
@@ -156,6 +165,8 @@ nav ul {
     display: flex;
     list-style: none;
     gap: 22px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 nav a {
@@ -172,7 +183,6 @@ nav a:hover {
 /* Главный экран */
 .hero {
     background: linear-gradient(135deg, #F4F7FA 0%, #E6EDF5 100%);
-    /* УМЕНЬШИЛИ ОТСТУП ВДВОЕ: было 130px, стало 65px */
     padding: 65px 0;
     text-align: center;
 }
@@ -182,6 +192,7 @@ nav a:hover {
     color: var(--primary);
     margin-bottom: 20px;
     font-weight: 600;
+    line-height: 1.2;
 }
 
 .hero .subtitle {
@@ -211,6 +222,10 @@ h2 {
     font-size: 2.2rem;
     color: var(--primary);
     margin-bottom: 40px;
+    font-weight: 600;
+}
+
+h3 {
     font-weight: 600;
 }
 
@@ -265,7 +280,7 @@ h2 {
 /* Специализация */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
 }
 
@@ -277,11 +292,6 @@ h2 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-top: 4px solid var(--secondary);
     box-shadow: 0 4px 12px rgba(44, 62, 80, 0.05);
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(44, 62, 80, 0.12);
 }
 
 .service-card h3 {
@@ -335,7 +345,7 @@ h2 {
 
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* было 320px — исправлено */
     gap: 30px;
 }
 
@@ -346,10 +356,6 @@ h2 {
     display: flex;
     flex-direction: column;
     transition: box-shadow 0.3s ease;
-}
-
-.blog-card:hover {
-    box-shadow: 0 12px 28px rgba(44, 62, 80, 0.12);
 }
 
 .blog-content {
@@ -421,13 +427,6 @@ h2 {
     gap: 5px;
 }
 
-.contact-card:hover {
-    background: var(--white);
-    border-color: var(--secondary);
-    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.1);
-    transform: translateY(-5px);
-}
-
 .contact-card h3 {
     font-size: 1.1rem;
     margin: 0;
@@ -445,6 +444,15 @@ h2 {
     font-size: 0.9rem;
 }
 
+.note a {
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+.note a:hover {
+    color: var(--primary);
+}
+
 .contacts-note {
     margin-top: 40px;
 }
@@ -454,17 +462,29 @@ footer {
     background-color: var(--primary);
     color: var(--white);
     padding: 30px 0;
+    text-align: center;
 }
 
 footer p {
     opacity: 0.85;
     font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    margin-top: 10px;
 }
 
 .footer-links a {
     color: var(--accent);
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+    text-decoration: underline;
 }
 
 /* Плавающие кнопки связи */
@@ -490,11 +510,6 @@ footer p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.float-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-}
-
 .float-btn svg {
     width: 26px;
     height: 26px;
@@ -513,42 +528,360 @@ footer p {
     background-color: #6c5ce7;
 }
 
-/* Адаптивность */
+/* Hover-эффекты только для устройств с настоящим hover (не тач) */
+@media (hover: hover) and (pointer: fine) {
+    .btn-primary:hover {
+        background-color: var(--primary);
+        border-color: var(--primary);
+    }
+    .btn-secondary:hover {
+        background-color: var(--primary);
+        color: var(--white);
+    }
+    .logo:hover {
+        color: var(--secondary);
+    }
+    nav a:hover {
+        color: var(--secondary);
+    }
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(44, 62, 80, 0.12);
+    }
+    .blog-card:hover {
+        box-shadow: 0 12px 28px rgba(44, 62, 80, 0.12);
+    }
+    .contact-card:hover {
+        background: var(--white);
+        border-color: var(--secondary);
+        box-shadow: 0 10px 25px rgba(44, 62, 80, 0.1);
+        transform: translateY(-5px);
+    }
+    .read-more:hover {
+        color: var(--primary);
+    }
+    .float-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    }
+    .header-socials a:hover {
+        color: var(--primary);
+        transform: scale(1.15);
+    }
+    .footer-links a:hover {
+        color: var(--white);
+        text-decoration: underline;
+    }
+}
+
+/* Юридические страницы */
+.legal-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.legal-content h1 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.legal-content .legal-date {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--accent);
+}
+
+.legal-content h2 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.legal-content h3 {
+    font-size: 1.15rem;
+    color: var(--primary);
+    margin-top: 25px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.legal-content p {
+    color: var(--text-light);
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.legal-content ul,
+.legal-content ol {
+    padding-left: 25px;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.legal-content li {
+    margin-bottom: 8px;
+    line-height: 1.7;
+}
+
+.legal-content a {
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+.legal-content a:hover {
+    color: var(--primary);
+}
+
+.legal-content .back-link {
+    display: inline-block;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid var(--accent);
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.legal-content .back-link:hover {
+    color: var(--primary);
+}
+
+.legal-content .highlight-box {
+    background-color: var(--bg-light);
+    border-left: 4px solid var(--secondary);
+    padding: 20px 25px;
+    border-radius: 8px;
+    margin: 25px 0;
+}
+
+.legal-content .highlight-box p {
+    margin-bottom: 0;
+    color: var(--text-dark);
+}
+
+/* Хлебные крошки для статей */
+.breadcrumbs {
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.breadcrumbs a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.breadcrumbs span {
+    margin: 0 8px;
+    color: var(--text-light);
+}
+
+/* Статья */
+.article-header {
+    padding: 40px 0 20px;
+}
+
+.article-header .article-tag {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+}
+
+.article-header h1 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.article-meta {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--accent);
+}
+
+.article-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 0 60px;
+}
+
+.article-body h2 {
+    font-size: 1.6rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.article-body h3 {
+    font-size: 1.2rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.article-body p {
+    color: var(--text-light);
+    margin-bottom: 18px;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.article-body ul,
+.article-body ol {
+    padding-left: 25px;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.article-body li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.article-body .highlight-box {
+    background-color: var(--bg-light);
+    border-left: 4px solid var(--secondary);
+    padding: 20px 25px;
+    border-radius: 8px;
+    margin: 25px 0;
+}
+
+.article-body .highlight-box p {
+    margin-bottom: 0;
+    color: var(--text-dark);
+}
+
+.article-cta {
+    background: var(--bg-light);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.article-cta h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.article-cta p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+/* АДАПТИВНОСТЬ */
+
+/* Планшеты */
+@media (max-width: 992px) {
+    .header-container {
+        gap: 10px;
+    }
+    nav ul {
+        gap: 15px;
+    }
+    nav a {
+        font-size: 0.9rem;
+    }
+    .logo {
+        font-size: 1.25rem;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero .subtitle {
+        font-size: 1.1rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .about-grid {
+        gap: 35px;
+    }
+    .section {
+        padding: 70px 0;
+    }
+}
+
+/* Мобильные */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
     }
     .header-left {
         flex-direction: column;
         gap: 10px;
     }
     nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+        gap: 12px;
     }
-    .hero h1 { 
-        font-size: 2rem; 
+    .hero {
+        padding: 50px 0;
     }
-    .hero-buttons { 
-        flex-direction: column; 
-        align-items: center; 
+    .hero h1 {
+        font-size: 2rem;
     }
-    .about-grid, .formats-grid { 
-        grid-template-columns: 1fr; 
+    .hero .subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
     }
-    .about-image { 
-        order: -1; 
+    .hero-btn-large {
+        padding: 14px 30px;
+        font-size: 1rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .section {
+        padding: 50px 0; /* уменьшено с 80px */
+        scroll-margin-top: 120px;
+    }
+    .about-grid, .formats-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .about-image {
+        order: -1;
     }
     .about-image img {
         max-height: 350px;
     }
-    h2 { 
-        font-size: 1.8rem; 
+    h2 {
+        font-size: 1.7rem;
+        margin-bottom: 30px;
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
     }
     .contact-grid {
         grid-template-columns: 1fr 1fr;
+    }
+    .blog-grid {
+        grid-template-columns: 1fr;
     }
     .floating-contacts {
         right: 15px;
@@ -563,10 +896,47 @@ footer p {
         width: 22px;
         height: 22px;
     }
+    .legal-content {
+        padding: 40px 20px;
+    }
+    .legal-content h1 {
+        font-size: 1.8rem;
+    }
+    .legal-content h2 {
+        font-size: 1.3rem;
+        margin-top: 30px;
+    }
+    .article-header h1 {
+        font-size: 1.7rem;
+    }
+    .article-body {
+        padding: 20px 0 40px;
+    }
+    .article-body p {
+        font-size: 1rem;
+    }
+    .article-cta {
+        padding: 30px 20px;
+    }
 }
 
 @media (max-width: 480px) {
+    .container {
+        width: 92%;
+    }
     .contact-grid {
         grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    .service-card, .format-card {
+        padding: 25px 20px;
+    }
+    .blog-content {
+        padding: 22px;
     }
 }
