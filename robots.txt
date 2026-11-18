@@ -1,1 +1,17 @@
+# robots.txt для luizke.ru
+# Размещается в корне сайта (рядом с index.html)
 
+User-agent: *
+Allow: /
+Disallow: /images/
+
+# Карты сайта
+Sitemap: https://luizke.ru/sitemap.xml
+
+# Специальные правила для основных поисковиков
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term
